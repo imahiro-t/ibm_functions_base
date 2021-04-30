@@ -44,7 +44,7 @@ end
 $ docker run -d -it --rm --name elx erintheblack/elixir-ibm-functions-builder:1.10.4
 $ docker cp lib elx:/tmp
 $ docker cp mix.exs elx:/tmp
-$ docker exec elx /bin/bash -c "mix deps.get; MIX_ENV=prod mix ibm_functions.release ${ModuleName}"
+$ docker exec elx /bin/sh -c "mix deps.get; MIX_ENV=prod mix ibm_functions.release ${ModuleName}"
 $ docker cp elx:/tmp/${app_name}-${version}.zip .
 $ docker stop elx
 ```
